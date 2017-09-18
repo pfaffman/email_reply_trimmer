@@ -180,7 +180,7 @@ class EmailReplyTrimmer
         [EmbeddedEmailMatcher::DATE_SOMEONE_EMAIL_REGEX]
       ).each do |r|
         text.gsub!(r) do |m|
-          m.count("\n") > 4 ? m : m.gsub(/\n+[[:space:]]*/, " ")
+          m.count("\n") > 4 ? m : m.gsub!(/\n+[[:space:]]*/, " ")
         end
       end
 
